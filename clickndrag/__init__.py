@@ -371,6 +371,7 @@ class Plane(object):
            Compare pygame.sprite.Sprite.update.
         """
 
+        sp_list = list(self.subplanes.values())
         for plane in self.subplanes.values():
 
             plane.update()

@@ -333,7 +333,7 @@ class GameWindow(object):
             if drag_dredge:
                 if last_mouse_up:
                     drag_dredge.destination = last_mouse_up.pos
-                    self.next_message = "Dredge %s moved to: %s"%(drag_dredge.name, `drag_dredge.destination`)
+                    self.next_message = "Dredge %s moved to: %s"%(drag_dredge.name, drag_dredge.destination)
                     drag_dredge = None
                 else:
                     pass
@@ -341,5 +341,5 @@ class GameWindow(object):
             
             #move on with our lives
             pygame.event.clear()
-            if self.next_message: print self.next_message
+            if self.next_message: print(self.next_message)
             elapsed = self.clock.tick(self.max_frame_rate)

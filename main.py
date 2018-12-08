@@ -9,5 +9,5 @@ if __name__ == "__main__":
     GW = GameWindow()
     W = Controller.World()
     GW.mainloop(W)
-    print W.G.__dict__
+    print (W.G.__dict__)
     GW.quit()

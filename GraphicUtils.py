@@ -36,7 +36,7 @@ def show_fonts(output, loc=(10,10)):
     """list the system fonts on the given window"""
     x, y = loc
     list = pygame.font.get_fonts()
-    print list
+    print(list)
 #    for f in list:
 #        for size in (16, 8, 4):
 #            font = pygame.font.SysFont(f, size)
