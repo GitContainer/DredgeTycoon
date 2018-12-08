@@ -372,7 +372,7 @@ class Plane(object):
         """
 
         sp_list = list(self.subplanes.values())
-        for plane in self.subplanes.values():
+        for plane in sp_list:
 
             plane.update()
 
