@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/20/trunk/graphics
+END
+swordfish_tile_32x32.png
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/20/trunk/graphics/swordfish_tile_32x32.png
+END
+sea_tile_32x32.png
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/14/trunk/graphics/sea_tile_32x32.png
+END
+city_256x256.png
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/12/trunk/graphics/city_256x256.png
+END
+ship_sea_ocean_64x64.png
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/12/trunk/graphics/ship_sea_ocean_64x64.png
+END
+ship_sea_ocean_64x64_b.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/14/trunk/graphics/ship_sea_ocean_64x64_b.png
+END
+turtle_tile_32x32.png
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/20/trunk/graphics/turtle_tile_32x32.png
+END
+ship_sea_ocean_128x128.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/12/trunk/graphics/ship_sea_ocean_128x128.png
+END
+city-icon_48x48.png
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/12/trunk/graphics/city-icon_48x48.png
+END
+whale_tile_32x32.png
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/20/trunk/graphics/whale_tile_32x32.png
+END
+tugboat_tile_32x32.png
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/20/trunk/graphics/tugboat_tile_32x32.png
+END
