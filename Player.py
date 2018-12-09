@@ -1,4 +1,4 @@
-"""Player.py - Contsains the Player object"""
+"""Player.py - Contains the Player object"""
 from Dredge import Dredge
 import Game
 
@@ -16,13 +16,13 @@ class Player(object):
             self.dredges.append(Dredge(owner=self, loc=(400, 400)))
 
     def generate_dredge(self, name=None):
-        # add a dredge to a player
-        # What purpose does this function serve?
+        """Add a dredge to a player"""
         self.dredges.append(Dredge())
 
     def time_step(self, steptimesize, game):
         """Adjust the player to reflect moving forward in time.
-           steptimesize in the time step in days.
+
+           steptimesize is the time step in days.
            game is the game I am part of."""
         ts_messages = []
         revenue = 0
