@@ -33,11 +33,11 @@ class Player(object):
         working_costs = 0
         for mydredge in self.dredges:
             # For Payroll! wait Boo!
-            fixed_costs -= mydredge.fixedCosts * steptimesize
+            fixed_costs -= mydredge.fixed_costs * steptimesize
             mydredge.time_step(steptimesize, game)
             city_its_in = [c for c in game.cities if mydredge.in_city(c)]
             if mydredge.assigned_project and city_its_in:
-                working_costs -= mydredge.workingCosts * steptimesize
+                working_costs -= mydredge.working_costs * steptimesize
             elif city_its_in:
                 projects = [p for p in city_its_in[0].projects if p.player == self]
                 if projects:

@@ -13,8 +13,8 @@ class Dredge(object):
         self.production = float(production)  # m3/wrkhr
         self.sail_speed = float(sail_speed)  # units/hr
 
-        self.workingCosts = production * (2.0) * 24  # $/day
-        self.fixedCosts = production * (0.70) * 24  # $/day
+        self.working_costs = production * (2.0) * 24  # $/day
+        self.fixed_costs = production * (0.70) * 24  # $/day
 
         self.location = loc
         self.assigned_project = None
