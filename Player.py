@@ -15,7 +15,7 @@ class Player(object):
             self.dredges.append(Dredge(name="Treasure Island", owner=self, production=2000, loc=(5 + 16, 425 + 16)))
             self.dredges.append(Dredge(owner=self, loc=(400, 400)))
 
-    def generateDredge(self, name=None):
+    def generate_dredge(self, name=None):
         # add a dredge to a player
         # What purpose does this function serve?
         self.dredges.append(Dredge())
