@@ -1,4 +1,5 @@
 """City.py - Contains the City object"""
+
 import os, random, datetime
 import pygame
 from Project import Project
@@ -23,9 +24,9 @@ class City(object):
         self.image = pygame.transform.scale(image, self.image_size)
         self.plane = None
 
-        self.generateProject()
+        self.generate_project()
 
-    def generateProject(self, probability=1):
+    def generate_project(self, probability=1):
         """generateProject - Add a project to the city
            probability is the probability of a project.
         """
@@ -47,5 +48,5 @@ class City(object):
         for p in self.projects:
             ts_messages.extend(p.TimeStep(steptimesize, game))
         # generate any new projects
-        ts_messages.extend(self.generateProject(self.project_probability * steptimesize))
+        ts_messages.extend(self.generate_project(self.project_probability * steptimesize))
         return ts_messages
