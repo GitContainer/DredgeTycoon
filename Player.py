@@ -28,7 +28,7 @@ class Player(object):
         revenue = 0
         for myproject in self.projects:
             # For Profit - expect projects to be updated before players
-            revenue += myproject.quantityThisPeriod * myproject.unitcost
+            revenue += myproject.quantity_this_period * myproject.unit_cost
         fixed_costs = 0
         working_costs = 0
         for mydredge in self.dredges:

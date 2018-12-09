@@ -42,7 +42,7 @@ class Dredge(object):
         """update the dredge position if not in place"""
         ts_messages = []
         if self.assigned_project and not self.destination:
-            self.destination = self.assigned_project.parentCity.location
+            self.destination = self.assigned_project.parent_city.location
         if self.destination:
             D = float(
                 (self.destination[1] - self.location[1]) ** 2 + (self.destination[0] - self.location[0]) ** 2) ** 0.5
