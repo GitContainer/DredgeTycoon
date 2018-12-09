@@ -27,11 +27,11 @@ class World(object):
         decimal_days = elapsedtime/1000./self.timeScale
         for mycity in self.G.cities:
             #note that the cities update their projects
-            step_messages.extend(mycity.TimeStep(decimal_days, self.G))
+            step_messages.extend(mycity.time_step(decimal_days, self.G))
             
         for myplayer in self.G.players:
             #Note that players update their dredges
-            step_messages.extend(myplayer.TimeStep(decimal_days, self.G))
+            step_messages.extend(myplayer.time_step(decimal_days, self.G))
         
         # Record world for history I'm sure this will be interesting later 
         self.history[self.time]=self

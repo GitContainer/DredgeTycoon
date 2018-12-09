@@ -20,7 +20,7 @@ class Player(object):
         # What purpose does this function serve?
         self.dredges.append(Dredge())
 
-    def TimeStep(self, steptimesize, game):
+    def time_step(self, steptimesize, game):
         """Adjust the player to reflect moving forward in time.
            steptimesize in the time step in days.
            game is the game I am part of."""
@@ -34,7 +34,7 @@ class Player(object):
         for mydredge in self.dredges:
             # For Payroll! wait Boo!
             fixed_costs -= mydredge.fixedCosts * steptimesize
-            mydredge.TimeStep(steptimesize, game)
+            mydredge.time_step(steptimesize, game)
             city_its_in = [c for c in game.cities if mydredge.in_city(c)]
             if mydredge.assigned_project and city_its_in:
                 working_costs -= mydredge.workingCosts * steptimesize

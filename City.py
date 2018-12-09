@@ -40,13 +40,13 @@ class City(object):
         else:
             return []
 
-    def TimeStep(self, steptimesize, game):
+    def time_step(self, steptimesize, game):
         """update the city as time passes"""
         # eventually generate new projects here
         ts_messages = []
         # Check my projects
         for p in self.projects:
-            ts_messages.extend(p.TimeStep(steptimesize, game))
+            ts_messages.extend(p.time_step(steptimesize, game))
         # generate any new projects
         ts_messages.extend(self.generate_project(self.project_probability * steptimesize))
         return ts_messages

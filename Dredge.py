@@ -38,7 +38,7 @@ class Dredge(object):
         self.image = pygame.transform.scale(image, self.image_size)
         self.plane = None
 
-    def TimeStep(self, steptimesize, game):
+    def time_step(self, steptimesize, game):
         """update the dredge position if not in place"""
         ts_messages = []
         if self.assigned_project and not self.destination:

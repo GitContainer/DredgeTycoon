@@ -26,7 +26,7 @@ class Project(object):
         """ return the fraction of the project completed this step period """
         return (self.quantityThisPeriod / self.quantity)
 
-    def TimeStep(self, steptimesize, G):
+    def time_step(self, steptimesize, G):
         """ adjust the project to reflect moving forward in time
             steptimesize is the timestep in days
             G is the game object
