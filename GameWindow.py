@@ -112,7 +112,7 @@ class CityStatus(clickndrag.gui.Container):
                                        'dredges_%d'%self.num_proj])
             city_data_strs['name_%d'%self.num_proj]="%s"%p.name
             city_data_strs['size_%d'%self.num_proj]="  Size: %0.0f"%p.quantity
-            city_data_strs['value_%d'%self.num_proj]="  Value: $%0.0f"%p.TotalValue
+            city_data_strs['value_%d'%self.num_proj]="  Value: $%0.0f"%p.total_value
             city_data_strs['dredges_%d'%self.num_proj]="  Dredges: %i %% Done: %.1f"%(len(p.dredges),p.progress()*100)
         name_length = max([len(city_data_strs[s]) for s in city_data_strs])*char_width+char_width
         name_label=clickndrag.gui.Label('city_name', 
@@ -136,7 +136,7 @@ class CityStatus(clickndrag.gui.Container):
         city_data_strs = {}
         city_data_strs['name_%d'%pID]="%s"%p.name
         city_data_strs['size_%d'%pID]="  Size: %0.0f"%p.quantity
-        city_data_strs['value_%d'%pID]="  Value: $%0.0f"%p.TotalValue
+        city_data_strs['value_%d'%pID]="  Value: $%0.0f"%p.total_value
         city_data_strs['dredges_%d'%pID]="  Dredges: %i %% Done: %.1f"%(len(p.dredges),p.progress()*100)
         self.project_status[p] = []
         str_len = max([len(city_data_strs[s]) for s in city_data_strs])*char_width
@@ -169,7 +169,7 @@ class CityStatus(clickndrag.gui.Container):
                 self.add_project_display(p, self.num_proj)
             self.project_status[p][0].text = "%s"%p.name
             self.project_status[p][1].text = "  Size: %0.0f"%p.quantity
-            self.project_status[p][2].text = "  Value: $%0.0f"%p.TotalValue
+            self.project_status[p][2].text = "  Value: $%0.0f"%p.total_value
             self.project_status[p][3].text = "  Dredges: %i %% Done: %.1f"%(len(p.dredges),p.progress()*100)
         
         clickndrag.gui.Container.update(self)
