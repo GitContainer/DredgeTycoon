@@ -15,9 +15,10 @@ def comprehension_flatten(iter_lst):
 class Game(object):
     """Holds the various game objects"""
     def __init__(self):
-        self.cities = [City("Boston", (375,20)),
-                       City("New York", (400,80)),
-                       City("Jacksonville", (5,425)),
+        self.date = datetime.datetime(1920, 1, 1)
+        self.cities = [City(self.date, "Boston", (375,20)),
+                       City(self.date, "New York", (400,80)),
+                       City(self.date, "Jacksonville", (5,425)),
                        ]
         self.players = [Player()]    
         self.date = datetime.datetime(1920,1,1)

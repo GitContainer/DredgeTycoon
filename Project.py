@@ -6,12 +6,14 @@ import Game
 class Project(object):
     """A project to be performed"""
 
-    def __init__(self, city, player=None, qty=1000000, unit=4.5):
+    def __init__(self, city, start_date, player=None, qty=1000000, unit=4.5):
         self.parent_city = city
+        self.start_date = start_date
         self.player = player
         self.quantity = qty
         self.quantity_remain = qty
         self.quantity_this_period = 0
+        self.orig_unit = unit
         self.unit_cost = unit
         self.total_value = qty * self.unit_cost
         self.dredges = []
@@ -44,6 +46,14 @@ class Project(object):
                     d.assigned_project = self
                     self.dredges.append(d)
                     ts_messages.append((d, "%s awarded to %s" % (self.name, self.player.name)))
+            if not self.player:
+                #reduce the value
+                days_advertised = (G.date - self.start_date).days
+                a = -0.5/(60.**2-2*30.**2)
+                b = -60.*a
+                c = 1
+                self.unit_cost = self.orig_unit*(a*days_advertised**2 + b*days_advertised + c)
+                self.total_value = self.quantity * self.unit_cost
         elif self.quantity_remain > 0 and self.dredges:
             # have dredges, update
             for mydredge in [d for d in self.dredges if d.in_city(self.parent_city)]:

@@ -7,7 +7,7 @@ from Project import Project
 class City(object):
     """The cities with projects to let"""
 
-    def __init__(self, name="sometown", xy=(0, 0)):
+    def __init__(self, date, name="sometown", xy=(0, 0)):
         self.name = name
         self.location = xy
         self.projects = []
@@ -24,9 +24,9 @@ class City(object):
         self.image = pygame.transform.scale(image, self.image_size)
         self.plane = None
 
-        self.generate_project()
+        self.generate_project(date)
 
-    def generate_project(self, probability=1):
+    def generate_project(self, date, probability=1):
         """generateProject - Add a project to the city
            probability is the probability of a project.
         """
@@ -34,7 +34,7 @@ class City(object):
             size = random.normalvariate(self.project_size, self.project_size * 0.25)
             size = int(size / 1000.) * 1000
             unit = random.normalvariate(self.project_unit, self.project_unit * 0.2)
-            proj = Project(self, qty=size, unit=unit)
+            proj = Project(self, date, qty=size, unit=unit)
             self.projects.append(proj)
             return [(self, "Project %s advertised for tender in %s" % (proj.name, self.name))]
         else:
@@ -48,5 +48,5 @@ class City(object):
         for p in self.projects:
             ts_messages.extend(p.time_step(steptimesize, game))
         # generate any new projects
-        ts_messages.extend(self.generate_project(self.project_probability * steptimesize))
+        ts_messages.extend(self.generate_project(game.date, self.project_probability * steptimesize))
         return ts_messages
