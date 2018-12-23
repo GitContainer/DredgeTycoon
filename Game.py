@@ -2,6 +2,7 @@
    dredges, and the game world."""
 # Model 
 import datetime
+import random
 from City import City
 from Player import Player
 
@@ -19,11 +20,12 @@ class Game(object):
     def __init__(self):
         self.date = datetime.datetime(1920, 1, 1)
 
-        self.cities = [City(self.date, "Boston", (450, 20)),
-                       City(self.date, "New York", (375, 80)),
-                       City(self.date, "Jacksonville", (5, 425)),
-                       City(self.date, "Norfolk", (300, 200))
-                       ]
+        possible_cities = [City(self.date, "Boston", (450, 20)),
+                           City(self.date, "New York", (375, 80)),
+                           City(self.date, "Jacksonville", (5, 425)),
+                           City(self.date, "Norfolk", (300, 200))
+                           ]
+        self.cities = random.sample(possible_cities, 3)
 
         self.players = [Player()]
         self.date = datetime.datetime(1920, 1, 1)
