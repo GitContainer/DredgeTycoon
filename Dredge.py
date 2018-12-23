@@ -7,7 +7,7 @@ import Game
 class Dredge(object):
     """A dredge to do the work"""
 
-    def __init__(self, name="Dredge No. 42", owner=None, production=1000, sail_speed=3, loc=(0, 0)):
+    def __init__(self, name="Dredge No. 42", owner=None, production=750, sail_speed=3, loc=(0, 0)):
         self.name = name
         self.owner = owner
         self.production = float(production)  # m3/wrkhr
