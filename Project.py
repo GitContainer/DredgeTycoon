@@ -26,6 +26,15 @@ class Project(object):
         self.dredges = []
         locations = ["Harbor", "Inlet", "Maintenance", "Beach"]
         self.name = self.parent_city.name + " %s" % (locations[random.randint(0, 3)])
+        print(self)
+
+    def __str__(self):
+        s = [" Project: {}".format(self.name),
+             "    Date: {}".format(self.start_date.strftime("Date: %d %B %Y")),
+             "Quantity: {:,d}".format(self.quantity),
+             "   Value: {:,.0f}".format(self.total_value),
+             "Max Value {:,.0f} after {:.0f} days".format(self.total_value * self.max_price_mult, self.days_to_max_price)]
+        return "\n".join(s)
 
     def progress(self):
         """ return the fraction of the project progress """
