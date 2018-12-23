@@ -25,7 +25,14 @@ class Project(object):
         self.total_value = qty * self.unit_cost
         self.dredges = []
         locations = ["Harbor", "Inlet", "Maintenance", "Beach"]
-        self.name = self.parent_city.name + " %s" % (locations[random.randint(0, 3)])
+        if self.max_price_mult > 1.4 and self.days_to_max_price < 15:
+            urgency = "Critical "
+        elif self.max_price_mult > 1.4 or self.days_to_max_price < 15:
+            urgency = "Emergency "
+        else:
+            urgency = ""
+
+        self.name = self.parent_city.name + " %s%s" % (urgency, locations[random.randint(0, 3)])
         print(self)
 
     def __str__(self):
