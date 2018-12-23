@@ -10,9 +10,16 @@ class Project(object):
         self.parent_city = city
         self.start_date = start_date
         self.player = player
+
         self.quantity = qty
         self.quantity_remain = qty
         self.quantity_this_period = 0
+
+        self.max_price_mult = 1.25
+        self.days_to_max_price = 30
+        self.days_to_orig_price = self.days_to_max_price * 2
+        self.min_price_mult = 0.5
+
         self.orig_unit = unit
         self.unit_cost = unit
         self.total_value = qty * self.unit_cost
@@ -49,8 +56,8 @@ class Project(object):
             if not self.player:
                 #reduce the value
                 days_advertised = (G.date - self.start_date).days
-                a = -0.5/(60.**2-2*30.**2)
-                b = -60.*a
+                a = -(2*(self.max_price_mult-1))/(self.days_to_orig_price**2-2*self.days_to_max_price**2)
+                b = -1*self.days_to_orig_price*a
                 c = 1
                 self.unit_cost = self.orig_unit*(a*days_advertised**2 + b*days_advertised + c)
                 self.total_value = self.quantity * self.unit_cost
