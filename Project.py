@@ -15,8 +15,8 @@ class Project(object):
         self.quantity_remain = qty
         self.quantity_this_period = 0
 
-        self.max_price_mult = 1.25
-        self.days_to_max_price = 30
+        self.max_price_mult = 1 + random.triangular(0.15, 0.5, 0.25)
+        self.days_to_max_price = 1 + random.triangular(10, 45, 30)
         self.days_to_orig_price = self.days_to_max_price * 2
         self.min_price_mult = 0.5
 
