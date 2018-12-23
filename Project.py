@@ -67,7 +67,7 @@ class Project(object):
                 # can only contribute if on-site
                 self.quantity_this_period += (mydredge.production * steptimesize * Game.days_to_hours)
             self.quantity_remain = self.quantity_remain - self.quantity_this_period
-        elif self.quantity_remain <= 0:
+        elif self.quantity_remain <= 0 or self.unit_cost/self.orig_unit < self.min_price_mult:
             # finished
             for d in self.dredges:
                 d.assigned_project = None
