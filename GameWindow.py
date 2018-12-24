@@ -178,7 +178,7 @@ class GameWindow(object):
     """
     GameWindow - Class to wrap the graphical display for the game.
     """
-    def __init__(self, width=1000, height=800, timeScale=1):
+    def __init__(self, width=700, height=800, timeScale=1):
         
         self.max_frame_rate = 10    #max frame rate in frames-per-second
         self.clock = pygame.time.Clock()
