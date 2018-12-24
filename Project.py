@@ -25,7 +25,14 @@ class Project(object):
         self.total_value = qty * self.unit_cost
         self.dredges = []
         locations = ["Harbor", "Inlet", "Maintenance", "Beach"]
-        self.name = self.parent_city.name + " %s" % (locations[random.randint(0, 3)])
+        if self.max_price_mult > 1.4 and self.days_to_max_price < 15:
+            urgency = "Critical "
+        elif self.max_price_mult > 1.4 or self.days_to_max_price < 15:
+            urgency = "Emergency "
+        else:
+            urgency = ""
+
+        self.name = "{} {}{}".format(self.parent_city.name, urgency, locations[random.randint(0, 3)])
         print(self)
 
     def __str__(self):
@@ -61,7 +68,7 @@ class Project(object):
                     self.player.projects.append(self)
                     d.assigned_project = self
                     self.dredges.append(d)
-                    ts_messages.append((d, "%s awarded to %s" % (self.name, self.player.name)))
+                    ts_messages.append((d, "{} awarded to {}".format(self.name, self.player.name)))
             if not self.player:
                 #reduce the value
                 days_advertised = (G.date - self.start_date).days
@@ -82,7 +89,7 @@ class Project(object):
                 d.assigned_project = None
             self.player.projects.remove(self)
             self.parent_city.projects.remove(self)
-            ts_messages.append((self.parent_city, "%s completed" % self.name))
+            ts_messages.append((self.parent_city, "{} completed".format(self.name)))
         else:
             # still qty, but no dredges assigned
             pass
