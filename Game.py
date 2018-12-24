@@ -20,10 +20,10 @@ class Game(object):
     def __init__(self):
         self.date = datetime.datetime(1920, 1, 1)
 
-        possible_cities = [City(self.date, "Boston", (450, 20)),
-                           City(self.date, "New York", (375, 80)),
-                           City(self.date, "Jacksonville", (5, 425)),
-                           City(self.date, "Norfolk", (300, 200))
+        possible_cities = [City(self.date, "Boston", (530, 10)),
+                           City(self.date, "New York", (390, 120)),
+                           City(self.date, "Norfolk", (280, 360)),
+                           City(self.date, "Jacksonville", (15, 750)),
                            ]
         self.cities = random.sample(possible_cities, 3)
 
